@@ -1,12 +1,12 @@
 # ---------------------------------------
-# PHP 8.2 image by WINGS-N 
+# nginx with PHP 8.2 image by WINGS-N 
 # ---------------------------------------
-FROM    ghcr.io/wings-n/pterodactyl-images:php_8.2
+FROM     ghcr.io/wings-n/pterodactyl-images:php_8.2
 
 LABEL    author="WINGS-N" maintainer="nikita@wingshost.ru"
 
 ## install packages
-RUN     dpkg --add-architecture i386
+RUN     dpkg --add-architecture amd64
 
 RUN     apt update && apt install nginx
 
