@@ -16,7 +16,7 @@ jobs:
       fail-fast: false
       matrix:
         tag:
-          - 'php_8.2'
+          - 'php_8.1'
     steps:
       - uses: actions/checkout@v3
       # Setup QEMU for ARM64 Build
