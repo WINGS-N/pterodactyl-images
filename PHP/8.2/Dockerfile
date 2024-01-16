@@ -1,12 +1,12 @@
 # ---------------------------------------
 # PHP 8.2 image by WINGS-N 
 # ---------------------------------------
-FROM    ghcr.io/parkervcp/yolks:debian
+FROM     --platform="linux/amd64" ghcr.io/parkervcp/yolks:debian
 
 LABEL    author="WINGS-N" maintainer="nikita@wingshost.ru"
 
 ## install packages
-RUN     dpkg --add-architecture i386 \
+RUN     dpkg --add-architecture amd64 \
         && apt update -y \
         && apt install -y --no-install-recommends gnupg2 tzdata \
         software-properties-common ca-certificates apt-transport-https gnupg2 wget libc6
