@@ -1,7 +1,7 @@
 # ---------------------------------------
 # PHP 8.2 image by WINGS-N 
 # ---------------------------------------
-FROM    ghcr.io/wings-n/pterodactyl-images:php_8.1
+FROM    ghcr.io/wings-n/pterodactyl-images:php_8.2
 
 LABEL    author="WINGS-N" maintainer="nikita@wingshost.ru"
 
