@@ -1,2 +1,2 @@
 # pterodactyl-images
-Docker images for Pterodactyl panel
+ Docker Images for Pterodactyl Panel
