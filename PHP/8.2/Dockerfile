@@ -9,7 +9,7 @@ LABEL    author="WINGS-N" maintainer="nikita@wingshost.ru"
 RUN     dpkg --add-architecture i386 \
         && apt update -y \
         && apt install -y --no-install-recommends gnupg2 tzdata \
-        software-properties-common ca-certificates apt-transport-https gnupg2 wget
+        software-properties-common ca-certificates apt-transport-https gnupg2 wget libc6
         
 RUN    wget http://mirrors.edge.kernel.org/debian/pool/main/libf/libffi/libffi8_3.4.4-1_amd64.deb && dpkg -i libffi8_3.4.4-1_amd64.deb
 
