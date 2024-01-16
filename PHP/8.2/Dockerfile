@@ -9,7 +9,9 @@ LABEL    author="WINGS-N" maintainer="nikita@wingshost.ru"
 RUN     dpkg --add-architecture i386 \
         && apt update -y \
         && apt install -y --no-install-recommends gnupg2 tzdata \
-        software-properties-common ca-certificates apt-transport-https gnupg2 wget libc6 libffi6 libffi-dev
+        software-properties-common ca-certificates apt-transport-https gnupg2 wget libc6
+        
+RUN     dpkg --install <(wget --quiet --output-document=- http://mirrors.edge.kernel.org/debian/pool/main/libf/libffi/libffi6_3.2.1-9_amd64.deb)
 
 RUN     echo "deb https://packages.sury.org/php/ buster main" >> /etc/apt/sources.list \
         && wget -qO - https://packages.sury.org/php/apt.gpg | apt-key add -
