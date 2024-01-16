@@ -8,7 +8,7 @@ LABEL    author="WINGS-N" maintainer="nikita@wingshost.ru"
 ## install packages
 RUN     dpkg --add-architecture amd64
 
-RUN     apt update && apt install nginx
+RUN     apt update -y && apt -y install nginx
 
 ENV     HOME=/home/container
 
