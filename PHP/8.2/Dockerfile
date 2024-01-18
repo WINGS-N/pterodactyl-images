@@ -1,7 +1,7 @@
 # ---------------------------------------
 # PHP 8.2 image by WINGS-N 
 # ---------------------------------------
-FROM     --platform=$TARGETOS/amd64 ghcr.io/wings-n/pterodactyl-images:os_debian_11
+FROM     --platform=$TARGETOS/amd64 ghcr.io/parkervcp/yolks:debian
 
 LABEL    author="WINGS-N" maintainer="nikita@wingshost.ru"
 
@@ -22,10 +22,10 @@ RUN     apt update -y \
         php8.2-curl php8.2-zip php8.2-readline php8.2-yaml \
 	php8.2-tokenizer php8.2-dom php8.2-cgi libphp8.2-embed
 
-ENV     HOME=/root/ PHP_INI_SCAN_DIR=/root/
+ENV     HOME=/home/container PHP_INI_SCAN_DIR=/home/container
 
-USER    root
-WORKDIR	/root
+USER    container
+WORKDIR	/home/container
 
 COPY        ./../entrypoint.sh /entrypoint.sh
 CMD         [ "/bin/bash", "/entrypoint.sh" ]
