@@ -1,7 +1,7 @@
 # ---------------------------------------
 # debian 12 image by WINGS-N 
 # ---------------------------------------
-FROM         --platform=$TARGETOS/$TARGETARCH debian:bookworm-slim
+FROM         --platform=$TARGETOS/$TARGETARCH debian:bullseye-slim
 
 LABEL        author="WINGS-N" maintainer="nikita@wingshost.ru"
 

@@ -1,7 +1,7 @@
 # ---------------------------------------
 # nginx with PHP 8.2 image by WINGS-N 
 # ---------------------------------------
-FROM     --platform=$TARGETOS/amd64 ghcr.io/wings-n/pterodactyl-images:os_debian_12
+FROM     --platform=$TARGETOS/amd64 ghcr.io/wings-n/pterodactyl-images:os_debian_11
 
 LABEL        author="WINGS-N" maintainer="nikita@wingshost.ru"
 
