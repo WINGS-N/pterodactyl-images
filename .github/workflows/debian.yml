@@ -1,4 +1,4 @@
-name: build nginx
+name: build debian
 on:
   workflow_dispatch:
   schedule:
@@ -7,16 +7,16 @@ on:
     branches:
       - main
     paths:
-      - nginx/**
+      - os/debian/**
 jobs:
   push:
-    name: "pterodactyl-images:nginx_${{ matrix.tag }}"
+    name: "pterodactyl-images:os_debian_${{ matrix.tag }}"
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
         tag:
-          - 'php_8.2'
+          - '12'
     steps:
       - uses: actions/checkout@v4
       # Setup QEMU for ARM64 Build
@@ -31,10 +31,10 @@ jobs:
           password: ${{ secrets.REGISTRY_TOKEN }}
       - uses: docker/build-push-action@v3
         with:
-          context: ./nginx
-          file: ./nginx/${{ matrix.tag }}/Dockerfile
+          context: ./os/debian
+          file: ./os/debian/${{ matrix.tag }}/Dockerfile
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ghcr.io/wings-n/pterodactyl-images:nginx_${{ matrix.tag }}
+            ghcr.io/wings-n/pterodactyl-images:os_debian_${{ matrix.tag }}
             
