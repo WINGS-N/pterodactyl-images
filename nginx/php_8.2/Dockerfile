@@ -5,10 +5,13 @@ FROM     ghcr.io/wings-n/pterodactyl-images:php_8.2
 
 LABEL    author="WINGS-N" maintainer="nikita@wingshost.ru"
 
+USER    root
 ## install packages
 RUN     dpkg --add-architecture amd64
 
-RUN     sudo apt update -y && sudo apt -y install nginx
+RUN     apt update -y && apt -y install nginx
+
+RUN     mkdir -p /home/container/nginx && ln -s /etc/nginx /home/container/nginx
 
 ENV     HOME=/home/container
 
